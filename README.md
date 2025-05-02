@@ -30,4 +30,4 @@ Make sure you have the following installed:
 ### Clone the Repository:
 First, clone the repository to your local machine:
 ```bash
-git clone https://https://github.com/Divyas1522/Link_shortener_dashBoard
+git clone https://github.com/Divyas1522/Link_shortener_dashBoard
