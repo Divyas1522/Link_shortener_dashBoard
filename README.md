@@ -7,7 +7,6 @@ A full-stack **Link Shortener Dashboard** built with **React**, **Node.js**, **E
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Authentication**: JWT (JSON Web Tokens)
-- **Real-time Updates**: WebSockets/SSE for live analytics
 - **Charts and Visualizations**: [Recharts](https://recharts.org/en-US/) for displaying click trends, top links, and other analytics data
 
 ## Features
