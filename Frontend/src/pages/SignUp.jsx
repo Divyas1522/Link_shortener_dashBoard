@@ -135,7 +135,7 @@ const SignUp = () => {
 
                     <div className='text-sky-400 mt-2 ml-19 underline'>Already have an account?
 
-                        <button onClick={handleClick} className='text-white ml-1'>SignIn</button>
+                        <button onClick={handleClick} className='text-white ml-1'>Sign In</button>
 
                     </div>
 

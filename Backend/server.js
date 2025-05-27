@@ -14,7 +14,10 @@ connectDB();
 
 const app = express();
 app.use(cors({
-  origin: 'http://localhost:5173', // your frontend origin
+  origin: [
+    'http://localhost:5173', // your frontend origin
+    'https://link-shortener-dash-board.vercel.app/'
+    ],
   credentials: true, // if you're sending cookies or auth headers
 }));
 
