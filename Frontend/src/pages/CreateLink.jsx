@@ -79,7 +79,7 @@ const CreateLink = () => {
   return (
     <div className="md:mt-2 flex items-center justify-center pt-10">
       <div className={`max-w-lg w-200 p-10 bg-[#1c1f2a] dark:bg-[#0f111a] rounded-lg shadow-lg text-white transition-all duration-300 ease-in-out transform hover:bg-gray-950 ${show ? "scale-100 opacity-100" : "scale-70 opacity-0" } `}>
-        <h2 className="text-3xl font-semibold mb-4 mt-[-15px] text-blue-300  ">Create Short Link</h2>
+        <h2 className="text-3xl font-semibold mb-4 mt-[-15px] bg-gradient-to-r from-blue-300 via-orange-400 bg-clip-text text-transparent">Create Short Link</h2>
 
         <form onSubmit={handleCreateLink} className="space-y-4">
           <div>

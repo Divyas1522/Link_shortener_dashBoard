@@ -20,8 +20,8 @@ const Dashboard = () => {
 
       {/* Topbar (mobile only) */}
       <div className="flex items-center justify-between md:hidden px-4 py-3 bg-[#1f2937] shadow-md fixed z-20 w-full">
-        <h2 className="text-xl font-bold text-violet-400 font-serif">Link Shortener Dashboard</h2>
-        <button onClick={toggleSidebar} className="text-violet-400 text-2xl">
+        <h2 className="text-xl font-bold bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent font-serif">Link Shortener Dashboard</h2>
+        <button onClick={toggleSidebar} className="text-2xl text-teal-400 ">
           <FaBars />
         </button>
       </div>
@@ -31,7 +31,7 @@ const Dashboard = () => {
         className={`fixed md:static z-30 w-64 bg-[#18283d] h-screen top-0 left-0 p-6 flex flex-col border-r border-gray-700 shadow-md transform ${showSidebar ? 'translate-x-0' : '-translate-x-full'
           } md:translate-x-0 transition-transform duration-300 ease-in-out`}
       >
-        <h2 className="sm:mt-0 mt-1 z-21 text-2xl font-extrabold text-center text-sky-300 mb-10 tracking-wider uppercase">
+        <h2 className="sm:mt-0 mt-1 z-21 text-2xl font-extrabold text-center bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent  mb-10 tracking-wider uppercase">
           Link Shortener and Analytics DashBoard
         </h2>
 

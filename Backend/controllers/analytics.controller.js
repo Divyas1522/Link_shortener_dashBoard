@@ -3,11 +3,15 @@ const Analytics = require("../models/analytics.model")
 
 const getAnalyticsSummary = async (req, res) => {
   const userEmail = req.user.email;
+  console.log("Email:",userEmail)
   const shortCode = req.params.shortCode; // Assuming shortCode is passed as a URL parameter
 
   try {
     // 1. Get all links of the user
     const links = await Link.find({ userId: userEmail });
+
+    const analyticsCount = await Analytics.countDocuments({ userEmail });
+    console.log("Analytics docs count:", analyticsCount);
 
     const totalLinks = await Link.countDocuments({ shortCode });
 
@@ -72,22 +76,25 @@ const getAnalyticsSummary = async (req, res) => {
 
     // 4. Device Breakdown — Assuming you store this in `link.deviceStats` or a separate Analytics collection
     // Here’s mock code if you store in Link
-    const deviceCounts = { mobile: 0, desktop: 0, tablet: 0 };
-    links.forEach(link => {
-      const stats = link.deviceStats || {};
-      deviceCounts.mobile += stats.mobile || 0;
-      deviceCounts.desktop += stats.desktop || 0;
-      deviceCounts.tablet += stats.tablet || 0;
-    });
+    const deviceCounts = await Analytics.aggregate([
+      { $match: { userEmail } },
+      { $group: { _id: "$device", count: { $sum: 1 } } }
+    ]);
 
-    const totalDevices =
-      deviceCounts.mobile + deviceCounts.desktop + deviceCounts.tablet || 1;
+    // Map results to mobile, desktop, tablet
+    const countsMap = deviceCounts.reduce((acc, cur) => {
+      acc[cur._id?.toLowerCase() || "unknown"] = cur.count;
+      return acc;
+    }, { mobile: 0, desktop: 0, tablet: 0 });
+
+    const totalDevices = Object.values(countsMap).reduce((a, b) => a + b, 0) || 1;
 
     const deviceBreakdown = {
-      mobile: Math.round((deviceCounts.mobile / totalDevices) * 100),
-      desktop: Math.round((deviceCounts.desktop / totalDevices) * 100),
-      tablet: Math.round((deviceCounts.tablet / totalDevices) * 100),
+      mobile: Math.round((countsMap.mobile / totalDevices) * 100),
+      desktop: Math.round((countsMap.desktop / totalDevices) * 100),
+      tablet: Math.round((countsMap.tablet / totalDevices) * 100),
     };
+
 
 
     // 5. Device Stats

@@ -9,8 +9,7 @@ const analyticsSchema = new Schema({
   },
   userEmail: {
      type: String, 
-     required: 
-     true 
+     required: true 
   },
   device: {
      type: String,
@@ -27,10 +26,6 @@ const analyticsSchema = new Schema({
   country: {
     type: String,
     default: 'Unknown'
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now 
   },
 
 },

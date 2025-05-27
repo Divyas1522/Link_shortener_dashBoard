@@ -4,6 +4,7 @@ export const AuthDataContext = createContext();
 
 const AuthContext = ({ children }) => {
   const [user, setUser] = useState({
+    name:"",
     email:"",
     password:"",
   });
