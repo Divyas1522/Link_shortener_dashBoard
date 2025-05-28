@@ -97,8 +97,8 @@ const SignUp = () => {
     }, [])
 
     return (
-        <div className='h-screen w-full bg-[#0f172a] flex justify-center items-center '>
-            <div className={`w-110 h-130 p-7 bg-[#1e293b] dark:bg-[#1e293b]  rounded-2xl transform ease-in duration-300 ${show ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}>
+        <div className='h-screen w-full bg-[rgb(15,23,42)] flex justify-center items-center '>
+            <div className={`w-full max-w-xs sm:max-w-sm p-8 sm:p-8 bg-[#1e293b] dark:bg-[#1e293b]  rounded-2xl transform ease-in duration-300 ${show ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}>
                 <h1 className='text-white text-3xl font-bold text-center mt-7' >Create Account</h1>
 
                 <form onSubmit={handleSubmit}>
@@ -131,9 +131,9 @@ const SignUp = () => {
                         placeholder="Create password"
                         className='w-full px-3 py-2 rounded bg-[#334155] border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500' />
 
-                    <button type='submit' className='bg-blue-600 py-2 px-7 rounded-xl ml-35 mt-10 text-white transition ease-in duration-200 hover:bg-emerald-500 '>Submit</button>
+                    <button type='submit' className='bg-blue-600 py-2 px-7 block mx-auto rounded-xl justify-center items-center mt-10 text-white transition ease-in duration-200 hover:bg-emerald-500 '>Submit</button>
 
-                    <div className='text-sky-400 mt-2 ml-19 underline'>Already have an account?
+                    <div className='text-sky-400 mt-2 underline text-center'>Already have an account?
 
                         <button onClick={handleClick} className='text-white ml-1'>Sign In</button>
 

@@ -93,7 +93,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#0f172a] ">
-      <div className={`w-full max-w-sm p-8 bg-[#1e293b] dark:bg-[#1e293b] rounded-xl shadow-2xl transform duration-300 ${show ? "scale-100 opacity-100" : "scale-75 opacity-0"}`}>
+      <div className={`w-full max-w-xs sm:max-w-sm p-8 sm:p-8 bg-[#1e293b] dark:bg-[#1e293b] rounded-xl shadow-2xl transform duration-300 ${show ? "scale-100 opacity-100" : "scale-75 opacity-0"}`}>
         <h2 className="text-3xl font-bold text-center text-white mb-8">
           Welcome Back
         </h2>
