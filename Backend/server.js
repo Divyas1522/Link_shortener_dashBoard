@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const { PORT } = require("./config");
 const connectDB = require("./config/database");
 
 const cookieParser = require("cookie-parser");
@@ -16,7 +15,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173', // your frontend origin
-    'https://link-shortener-dash-board.vercel.app/'
+    'https://link-shortener-dash-board.vercel.app'
     ],
   credentials: true, // if you're sending cookies or auth headers
 }));
@@ -31,7 +30,11 @@ app.use("/auth",userRoute);
 app.use("/link", linkRoute);
 app.use("/analytics", analyticsRoute);
 
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
 
+const PORT= process.env.PORT || 5000;
 
 app.listen(PORT , (err) => {
     if(err) throw err;
